@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+
+# Docker
+*.log
+*.pid
+*.db
+*.sqlite
+*.sqlite3
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
+
+# Environment & secrets
+.env
+.env.*
