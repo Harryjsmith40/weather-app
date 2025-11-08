@@ -9,7 +9,7 @@ router = APIRouter(prefix="/weather", tags=["weather"])
 cache = {}
 
 API_KEY = os.getenv("OPENWEATHER_API_KEY")
-BASE_URL = "https://api.openweathermap.org/data/2.5/onecall"
+BASE_URL = "https://api.openweathermap.org/data/3.0/onecall"
 
 @router.get("/")
 def get_weather(

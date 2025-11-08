@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from .api import health  # We’ll create this next
+from .api import health, weather
 
 app = FastAPI(
     title="Weather App Backend",
@@ -9,6 +9,7 @@ app = FastAPI(
 
 # Include routers
 app.include_router(health.router)
+app.include_router(weather.router)
 
 @app.get("/")
 async def root():
