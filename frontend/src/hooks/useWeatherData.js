@@ -63,7 +63,7 @@ export default function useWeatherData() {
       try {
         setLoading(true);
         const response = await fetch(
-  `https://weather-backend.onrender.com/weather?lat=${coords.lat}&lon=${coords.lon}`
+  `https://weather-backend-zuwu.onrender.com/weather?lat=${coords.lat}&lon=${coords.lon}`
 	);
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
 
