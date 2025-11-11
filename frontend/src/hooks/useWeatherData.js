@@ -63,8 +63,8 @@ export default function useWeatherData() {
       try {
         setLoading(true);
         const response = await fetch(
-          `http://127.0.0.1:8000/weather?lat=${coords.lat}&lon=${coords.lon}`
-        );
+  `https://weather-backend.onrender.com/weather?lat=${coords.lat}&lon=${coords.lon}`
+	);
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
 
         const data = await response.json();
