@@ -8,6 +8,22 @@ app = FastAPI(
     description="FastAPI backend for Weather App with Generative Stories",
 )
 
+from fastapi.middleware.cors import CORSMiddleware
+
+origins = [
+    "https://weather-app-two-blush-14.vercel.app",  # your Vercel frontend
+    "http://localhost:5173",                        # local dev (optional)
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+
 # --- CORS CONFIGURATION ---
 app.add_middleware(
     CORSMiddleware,
