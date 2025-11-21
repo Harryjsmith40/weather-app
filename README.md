@@ -1,80 +1,49 @@
-\# Weather App — Backend Skeleton
+🌦️ Nim’s Weather World
 
+A full-stack weather companion app featuring Nim the Penguin 🐧.
+Frontend: React + Vite + TailwindCSS
+Backend: FastAPI
+Hosting: Vercel (frontend) + Render (backend)
 
-
-This repository contains the backend scaffold for the Weather App with a \*\*Generative Weather Stories\*\* twist.
-
-
-
-\## Project Structure
-
-
-
+📁 Project Structure
 weather-app/
+ ├─ backend/     → FastAPI backend
+ ├─ frontend/    → React + Vite frontend
+ └─ render.yaml  → Render deployment config
 
-├─ backend/
+⚙️ Tech Stack
+Layer	Technology	Purpose
+Backend	FastAPI, httpx	Weather API + caching
+Frontend	React, Vite, Tailwind	UI, animation, geolocation
+Hosting	Render + Vercel	API + frontend deployment
+Weather Provider	OpenWeatherMap	Forecast data
 
-│ ├─ app/
-
-│ │ ├─ main.py
-
-│ │ ├─ api/
-
-│ │ │ └─ health.py
-
-│ │ └─ core/
-
-│ │ └─ config.py
-
-│ ├─ requirements.txt
-
-│ └─ Dockerfile
-
-├─ .gitignore
-
-└─ README.md
-
-
-
-
-
-\## Getting Started
-
-
-
-\### Run with Docker
-
-```bash
-
-docker compose up
-
-
-
-Visit http://localhost:8000/health to check the API status.
-
-
-
-Run Locally (without Docker)
-
+🚀 Running Locally
+Backend
 cd backend
-
+python -m venv venv
+venv\Scripts\activate  (Windows)
 pip install -r requirements.txt
-
 uvicorn app.main:app --reload
 
+Backend runs at:
+http://127.0.0.1:8000
 
+Frontend
+cd frontend
+npm install
+npm run dev
 
-Notes
+Frontend runs at:
+http://127.0.0.1:5173
 
+🌐 Deployment URLs
+Component	URL
+Frontend	https://weather-app-two-blush-14.vercel.app
+Backend	https://weather-backend-zuwu.onrender.com
 
-
-FastAPI backend scaffold
-
-
-
-Ready for integration with a weather API
-
-
-
-.gitignore already configured to exclude sensitive or unnecessary files
-
+🧠 Future Enhancements
+Animated weather scenes
+Nim’s generative daily stories
+PWA installability
+Redis-based persistent caching
