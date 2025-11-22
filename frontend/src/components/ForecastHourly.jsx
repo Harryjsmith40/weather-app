@@ -42,14 +42,12 @@ export default function ForecastHourly({ weatherData, settings }) {
     ],
   };
 
+  const lowestTemp = Math.min(...graphData.datasets[0].data);
+  const highestTemp = Math.max(...graphData.datasets[0].data);
+
   const graphOptions = {
     responsive: true,
-    plugins: {
-      legend: {
-        display: true,
-        position: "top",
-      },
-    },
+    maintainAspectRatio: false,
     scales: {
       x: {
         title: {
@@ -58,6 +56,8 @@ export default function ForecastHourly({ weatherData, settings }) {
         },
       },
       y: {
+        min: Math.min(5, lowestTemp - 3),
+        max: Math.max(35, highestTemp + 3),
         title: {
           display: true,
           text: `Temperature (${useF ? "°F" : "°C"})`,
@@ -69,15 +69,12 @@ export default function ForecastHourly({ weatherData, settings }) {
   return (
     <div
       className="
-        bg-white/70 backdrop-blur-xl 
-        shadow-[0_8px_30px_rgba(0,0,0,0.05)]
         rounded-3xl p-5 sm:p-6
-        cursor-pointer hover:shadow-md transition
       "
       onClick={openModal} // Open modal when the entire card section is clicked
     >
       <div className="flex items-center justify-center gap-2 mb-3">
-        <h3 className="text-lg font-semibold text-gray-800">
+        <h3 className="text-xl font-semibold text-gray-800">
           Next 12 Hours
         </h3>
       </div>
@@ -118,8 +115,9 @@ export default function ForecastHourly({ weatherData, settings }) {
           onClick={closeModal} // Close modal when clicking outside the modal content
         >
           <div
-            className="bg-white/90 rounded-lg shadow-lg p-8 w-full max-w-3xl h-[60vh] overflow-y-auto"
+            className="bg-white/80 rounded-lg shadow-lg p-8 w-full max-w-3xl h-[60vh] overflow-y-auto"
             style={{
+              height: "60vh",
               position: "fixed",
               top: "50%",
               left: "50%",
@@ -132,12 +130,14 @@ export default function ForecastHourly({ weatherData, settings }) {
             </h2>
 
             {/* Graph */}
-            <div className="mb-6">
+            <div className="mb-6"
+            style={{ height: "500px" }}
+            >
               <Line data={graphData} options={graphOptions} />
             </div>
 
             {/* Close button */}
-            <div className="sticky bottom-0 bg-white pt-4">
+            <div className="sticky flex justify-center">
               <button
                 onClick={closeModal}
                 className="mt-4 px-6 py-3 bg-red-500 text-white rounded hover:bg-red-600 transition"

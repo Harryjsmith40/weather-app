@@ -5,9 +5,7 @@ import WeatherCard from "./components/WeatherCard";
 import PetCard from "./components/PetCard";
 import ForecastHourly from "./components/ForecastHourly";
 import ForecastDaily from "./components/ForecastDaily";
-import TodayDetails from "./components/TodayDetails";
 import SettingsPage from "./components/SettingsPage";
-// import AdvancedSections from "./components/AdvancedSections"; // optional
 
 import useWeatherData from "./hooks/useWeatherData";
 import useSettings from "./hooks/useSettings";
@@ -76,10 +74,6 @@ export default function App() {
 
             <motion.div {...motionProps(0.2)}>
               <PetCard weatherData={weatherData} settings={settings} />
-            </motion.div>
-
-            <motion.div {...motionProps(0.8)}>
-              <TodayDetails weatherData={weatherData} settings={settings} />
             </motion.div>
 
             <motion.div {...motionProps(0.4)}>

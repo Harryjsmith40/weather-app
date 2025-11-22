@@ -26,7 +26,7 @@ export default function WeatherCard({ weatherData, settings }) {
         bg-none
         transition-all duration-300 
         rounded-3xl 
-        p-6 sm:p-8 
+        p-6 sm:p-2 
         flex flex-col items-center text-center
       "
     >

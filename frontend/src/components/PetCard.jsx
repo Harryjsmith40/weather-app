@@ -72,18 +72,16 @@ export default function PetCard({ weatherData, settings }) {
   return (
     <div
       className="
-        bg-white/70 backdrop-blur-xl 
         rounded-3xl 
-        shadow-[0_8px_30px_rgba(0,0,0,0.05)]
         transition-all duration-300 
-        p-6 sm:p-8 
+        p-6 sm:p-2
         flex flex-col items-center text-center
       "
     >
       <img
         src={mood.image}
         alt="Nim"
-        className="w-32 h-32 sm:w-44 sm:h-44 mb-3 drop-shadow-md"
+        className="w-50 h-50 sm:w-128 sm:h-128 mb-3"
       />
 
       <h2 className="text-xl sm:text-2xl font-semibold mb-1">
